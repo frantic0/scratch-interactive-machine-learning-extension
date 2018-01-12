@@ -38,10 +38,18 @@
       classification = new rapidLib.Classification();
     }
 
+    ext.trainClassifier = function() {
+      classification.train(myData);
+    };
+
+    ext.runClassifier = function() {
+      classification.train(myData);
+    };
+
     var descriptor = {
       blocks: [
-        [' ', 'my first block', 'my_first_block', 0, 0, 0, 0, 0],
-        ['w', 'wait for random time', 'wait_random', 0, 0, 0, 0, 0],
+        [' ', 'train Classifier', 'trainClassifier', 0, 0, 0, 0, 0],
+        ['w', 'run Classifier', 'runClassifier', 0, 0, 0, 0, 0],
         ['r', '%n ^ %n', 'power', 2, 3, 0, 0, 0],
         ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA', 0, 0, 0],
         ['', 'run alarm after %n seconds', 'set_alarm', '2', 0, 0, 0, 0],
