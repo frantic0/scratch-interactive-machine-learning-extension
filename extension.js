@@ -91,6 +91,10 @@
       return myTrainingSet.length;
     };
 
+    ext.clearExamples = function() {
+      myTrainingSet = [];
+    };
+
 
     ext.trainClassifier = function(f1, f2, f3, f4, f5, label) {
       // myTrainingSet.push({
@@ -124,6 +128,7 @@
       blocks: [
         // Block type, block name, function name, param1 default value, param2 default value
         ['r', 'record examples f1 %n f2 %n f3 %n f4 %n f5 %n with label %n', 'recordExamples', 0, 0, 0, 0, 0, 0],
+        ['r', 'clear examples', 'clearExamples'],
         ['-'],
         ['w', 'train classifier', 'trainClassifier'],
         ['r', 'run classification f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
