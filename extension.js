@@ -1,4 +1,30 @@
 (function(ext) {
+
+
+
+    var rapidLib = null;
+    var regression = null;
+    var classification = null;
+    var myTrainingSet = [];
+
+    function loadRapidLib() {
+      $.getScript('https://www.doc.gold.ac.uk/eavi/rapidmix/RapidLib.js')
+        .done(function(script, textStatus) {
+          console.log('Loaded RapidLib');
+          loadRapidLibModules();
+        })
+        .fail(function(jqxhr, settings, exception) {
+          console.log('Error loading RapidLib');
+          loadRapidLib();
+      });
+    }
+
+    function loadRapidLibModules() {
+      rapidLib = window.RapidLib();
+      regression = new rapidLib.Regression();
+      classification = new rapidLib.Classification();
+    }
+
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -70,4 +96,6 @@
 
     // Register the extension
     ScratchExtensions.register('Interactive Machine Learning for ScratchX', descriptor, ext);
+    loadRapidLib();
+
 })({});
