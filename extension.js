@@ -40,6 +40,12 @@
 
     var descriptor = {
       blocks: [
+        [' ', 'my first block', 'my_first_block', 0, 0, 0, 0, 0],
+        ['w', 'wait for random time', 'wait_random', 0, 0, 0, 0, 0],
+        ['r', '%n ^ %n', 'power', 2, 3, 0, 0, 0],
+        ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA', 0, 0, 0],
+        ['', 'run alarm after %n seconds', 'set_alarm', '2', 0, 0, 0, 0],
+        ['h', 'when alarm goes off', 'when_alarm', 0, 0, 0, 0, 0],
         ['r', '%m.hands x position', 'getHandX', 'hand A'],
         ['r', '%m.hands y position', 'getHandY', 'hand A'],
         ['r', '%m.hands z position', 'getHandZ', 'hand A'],
