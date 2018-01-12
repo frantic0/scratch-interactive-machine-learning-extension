@@ -7,7 +7,10 @@
 
   // Cleanup function when the extension is unloaded
   ext._shutdown = function() {
-    return {status: 2, msg: 'Ready'};
+    rapidLib = null;
+    regression = null;
+    classification = null;
+    myTrainingSet = [];
   };
 
   // Status reporting code
@@ -50,4 +53,5 @@
 
   // Register the extension
   ScratchExtensions.register('My first extension', descriptor, ext);
+  loadRapidLib();
 })({});
