@@ -69,6 +69,12 @@
         [' ', 'train Regression f1 %n f2 %n f3 %n f4 %n f5 %n i0 %n i1 %n', 'trainClassifier', 0, 0, 0, 0, 0, 0, 0],
         ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0]
       ],
+      menus: {
+        hands: ['hand A', 'hand B'],
+        fingers: ['finger 1', 'finger 2', 'finger 3', 'finger 4', 'finger 5'],
+        tools: ['tool A', 'tool B'],
+        gestures: ['tap', 'poke', 'swipe', 'circle']
+      },
       url: 'http://frantic0.github.io/scratch-interactive-machine-learning-extension'
     };
 
