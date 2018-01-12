@@ -5,6 +5,8 @@
     var regression = null;
     var classification = null;
 
+    var myTrainingSet = [];
+
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -38,12 +40,17 @@
       classification = new rapidLib.Classification();
     }
 
-    ext.trainClassifier = function() {
+    ext.trainClassifier = function(f1, f2, f3, f4, f5, label) {
+
+      myTrainingSet.push({
+        input: [f1, f2, f3, f4, f5],
+        output: [label]
+      });
       classification.train(myData);
     };
 
-    ext.runClassifier = function() {
-      classification.run(myData);
+    ext.runClassifier = function(f1, f2, f3, f4, f5) {
+      classification.run([f1, f2, f3, f4, f5]);
     };
 
     ext.trainClassifier = function() {
@@ -58,21 +65,10 @@
       blocks: [
         [' ', 'train Classifier f1 %n f2 %n f3 %n f4 %n f5 %n Label %n', 'trainClassifier', 0, 0, 0, 0, 0, 0],
         ['r', 'run Classifier f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
-
         ['-'],
         [' ', 'train Regression f1 %n f2 %n f3 %n f4 %n f5 %n i0 %n i1 %n', 'trainClassifier', 0, 0, 0, 0, 0, 0, 0],
-        ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
-        ['-'],
-        ['h', 'when %m.gestures', 'whenGesture', 'tap'],
-        ['w', 'wait until %m.gestures', 'waitForGesture', 'tap']
+        ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0]
       ],
-
-      menus: {
-        hands: ['hand A', 'hand B'],
-        fingers: ['finger 1', 'finger 2', 'finger 3', 'finger 4', 'finger 5'],
-        tools: ['tool A', 'tool B'],
-        gestures: ['tap', 'poke', 'swipe', 'circle']
-      },
       url: 'http://frantic0.github.io/scratch-interactive-machine-learning-extension'
     };
 
