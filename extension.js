@@ -16,12 +16,6 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    // Block and block menu descriptions
-    var descriptor = {
-        blocks: [
-        ]
-    };
-
     function loadRapidLib() {
       $.getScript('https://www.doc.gold.ac.uk/eavi/rapidmix/RapidLib.js')
         .done(function(script, textStatus) {
