@@ -115,20 +115,17 @@
         ['r', 'run Classifier f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
         ['-'],
         [' ', 'train Regression f1 %n f2 %n f3 %n f4 %n f5 %n i0 %n i1 %n', 'trainRegressifier', 0, 0, 0, 0, 0, 0, 0],
-        ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runRegressifier', 0, 0, 0, 0, 0]
-
+        ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runRegressifier', 0, 0, 0, 0, 0],
         ['r', '%n ^ %n', 'power', 2, 3],
         ['w', 'wait for random time', 'wait_random'],
         ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
         ['', 'run alarm after %n seconds', 'set_alarm', '2'],
         ['h', 'when alarm goes off', 'when_alarm']
       ],
-      url: 'https://frantic0.github.io/scratch-interactive-machine-learning-extension/',
-      displayName: 'Interactive Machine Learning for ScratchX'
+      url: 'https://frantic0.github.io/scratch-interactive-machine-learning-extension/'
     };
 
     // Register the extension
-    ScratchExtensions.register('IML4ScratchX', descriptor, ext);
+    ScratchExtensions.register('Interactive Machine Learning', descriptor, ext);
     loadRapidLib();
-
 })({});
