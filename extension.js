@@ -44,31 +44,29 @@
     };
 
     ext.runClassifier = function(f1, f2, f3, f4, f5) {
-      classification.run([f1, f2, f3, f4, f5]);
+      return classification.run([f1, f2, f3, f4, f5]);
     };
 
-    // ext.trainRegressifier = function(f1, f2, f3, f4, f5, i0, i2) {
-    //   // regression.train(myData);
-    // };
-    //
-    // ext.runRegressifier = function(f1, f2, f3, f4, f5) {
-    //   // regression.run(myData);
-    // };
+    ext.trainRegressifier = function(f1, f2, f3, f4, f5, i0, i2) {
+      myTrainingSet.push({
+        input: [f1, f2, f3, f4, f5],
+        output: [label]
+      });
+      regression.train(myData);
+    };
+
+    ext.runRegressifier = function(f1, f2, f3, f4, f5) {
+      return regression.run([f1, f2, f3, f4, f5]);
+    };
 
     var descriptor = {
       blocks: [
         [' ', 'train Classifier f1 %n f2 %n f3 %n f4 %n f5 %n Label %n', 'trainClassifier', 0, 0, 0, 0, 0, 0],
         ['r', 'run Classifier f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
         ['-'],
-        // [' ', 'train Regression f1 %n f2 %n f3 %n f4 %n f5 %n i0 %n i1 %n', 'trainRegressifier', 0, 0, 0, 0, 0, 0, 0],
-        // ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runRegressifier', 0, 0, 0, 0, 0]
+        [' ', 'train Regression f1 %n f2 %n f3 %n f4 %n f5 %n i0 %n i1 %n', 'trainRegressifier', 0, 0, 0, 0, 0, 0, 0],
+        ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runRegressifier', 0, 0, 0, 0, 0]
       ],
-      menus: {
-        hands: ['hand A', 'hand B'],
-        fingers: ['finger 1', 'finger 2', 'finger 3', 'finger 4', 'finger 5'],
-        tools: ['tool A', 'tool B'],
-        gestures: ['tap', 'poke', 'swipe', 'circle']
-      },
       url: 'http://frantic0.github.io/scratch-interactive-machine-learning-extension'
     };
 
