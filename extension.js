@@ -46,29 +46,22 @@
       classification.run(myData);
     };
 
+    ext.trainClassifier = function() {
+      regression.train(myData);
+    };
+
+    ext.runClassifier = function() {
+      regression.run(myData);
+    };
+
     var descriptor = {
       blocks: [
         [' ', 'train Classifier f1 %n f2 %n f3 %n f4 %n f5 %n Label %n', 'trainClassifier', 0, 0, 0, 0, 0, 0],
-        ['w', 'run Classifier f1 %n f2 %n f3 %n f4 %n f5 %n Label %n', 'runClassifier', 0, 0, 0, 0, 0, 0],
-        ['r', '%n ^ %n', 'power', 2, 3],
-        ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
-        ['', 'run alarm after %n seconds', 'set_alarm', '2'],
-        ['r', '%m.hands x position', 'getHandX', 'hand A'],
-        ['r', '%m.hands y position', 'getHandY', 'hand A'],
-        ['r', '%m.hands z position', 'getHandZ', 'hand A'],
-        ['r', '%m.hands rotation', 'getHandRotation', 'hand A'],
-        ['b', '%m.hands is visible?', 'isHandVisible', 'hand A'],
-        ['b', '%m.hands is closed?', 'isHandGrabbed', 'hand A'],
+        ['r', 'run Classifier f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
+
         ['-'],
-        ['r', '%m.hands %m.fingers x position', 'getFingerX', 'hand A', 'finger 1'],
-        ['r', '%m.hands %m.fingers y position', 'getFingerY', 'hand A', 'finger 1'],
-        ['r', '%m.hands %m.fingers z position', 'getFingerZ', 'hand A', 'finger 1'],
-        ['b', '%m.hands %m.fingers is extended?', 'isFingerExtended', 'hand A', 'finger 1'],
-        ['-'],
-        ['r', '%m.tools x position', 'getToolX', 'tool A'],
-        ['r', '%m.tools y position', 'getToolY', 'tool A'],
-        ['r', '%m.tools z position', 'getToolZ', 'tool A'],
-        ['b', '%m.tools is visible?', 'isToolVisible', 'tool A'],
+        [' ', 'train Regression f1 %n f2 %n f3 %n f4 %n f5 %n i0 %n i1 %n', 'trainClassifier', 0, 0, 0, 0, 0, 0, 0],
+        ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
         ['-'],
         ['h', 'when %m.gestures', 'whenGesture', 'tap'],
         ['w', 'wait until %m.gestures', 'waitForGesture', 'tap']
