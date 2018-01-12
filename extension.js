@@ -63,14 +63,15 @@
       // return regression.run([f1, f2, f3, f4, f5]);
     };
 
+    // [' ', 'train Classifier f1 %n f2 %n f3 %n f4 %n f5 %n Label %n', 'trainClassifier', 0, 0, 0, 0, 0, 0],
+    // ['r', 'run Classifier f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
+    // ['-'],
+    // [' ', 'train Regression f1 %n f2 %n f3 %n f4 %n f5 %n i0 %n i1 %n', 'trainRegressifier', 0, 0, 0, 0, 0, 0, 0],
+    // ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runRegressifier', 0, 0, 0, 0, 0]
     var descriptor = {
       blocks: [
-        [' ', 'train Classifier f1 %n f2 %n f3 %n f4 %n f5 %n Label %n', 'trainClassifier', 0, 0, 0, 0, 0, 0],
-        ['r', 'run Classifier f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
-        // ['w', 'run Classifier f1 %n f2 %n f3 %n f4 %n f5 %n', 'runClassifier', 0, 0, 0, 0, 0],
-        ['-'],
-        [' ', 'train Regression f1 %n f2 %n f3 %n f4 %n f5 %n i0 %n i1 %n', 'trainRegressifier', 0, 0, 0, 0, 0, 0, 0],
-        ['r', 'run Regression f1 %n f2 %n f3 %n f4 %n f5 %n', 'runRegressifier', 0, 0, 0, 0, 0]
+        [' ', '♫'+num+' stop the music', 'stopMusic'],
+
       ],
       menus: null,
       url: 'http://frantic0.github.io/scratch-interactive-machine-learning-extension',
