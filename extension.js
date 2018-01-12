@@ -43,17 +43,16 @@
     };
 
     ext.runClassifier = function() {
-      classification.train(myData);
+      classification.run(myData);
     };
 
     var descriptor = {
       blocks: [
-        [' ', 'train Classifier', 'trainClassifier', 0, 0, 0, 0, 0],
-        ['w', 'run Classifier', 'runClassifier', 0, 0, 0, 0, 0],
-        ['r', '%n ^ %n', 'power', 2, 3, 0, 0, 0],
-        ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA', 0, 0, 0],
-        ['', 'run alarm after %n seconds', 'set_alarm', '2', 0, 0, 0, 0],
-        ['h', 'when alarm goes off', 'when_alarm', 0, 0, 0, 0, 0],
+        [' ', 'train Classifier f1 %n f2 %n f3 %n f4 %n f5 %n Label %n', 'trainClassifier', 0, 0, 0, 0, 0, 0],
+        ['w', 'run Classifier f1 %n f2 %n f3 %n f4 %n f5 %n Label %n', 'runClassifier', 0, 0, 0, 0, 0, 0],
+        ['r', '%n ^ %n', 'power', 2, 3],
+        ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
+        ['', 'run alarm after %n seconds', 'set_alarm', '2'],
         ['r', '%m.hands x position', 'getHandX', 'hand A'],
         ['r', '%m.hands y position', 'getHandY', 'hand A'],
         ['r', '%m.hands z position', 'getHandZ', 'hand A'],
