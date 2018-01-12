@@ -60,6 +60,7 @@
         ['h', 'when %m.gestures', 'whenGesture', 'tap'],
         ['w', 'wait until %m.gestures', 'waitForGesture', 'tap']
       ],
+
       menus: {
         hands: ['hand A', 'hand B'],
         fingers: ['finger 1', 'finger 2', 'finger 3', 'finger 4', 'finger 5'],
