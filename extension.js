@@ -17,8 +17,8 @@
   ext._getStatus = function() {
     return {status: 2, msg: 'Ready'};
   };
-  // function loadRapidLib() {
-  //   console.log('Loading RapidLib');
+  function loadRapidLib() {
+    console.log('Loading RapidLib');
   //   // $.getScript('https://www.doc.gold.ac.uk/eavi/rapidmix/RapidLib.js')
   //   //   .done(function(script, textStatus) {
   //   //     console.log('Loaded RapidLib');
@@ -33,7 +33,7 @@
   //   rapidLib = window.RapidLib();
   //   regression = new rapidLib.Regression();
   //   classification = new rapidLib.Classification();
-  // }
+  }
   ext.my_first_block = function() {
       // Code that gets executed when the block is run
   };
