@@ -97,7 +97,7 @@
       //   input: [f1, f2, f3, f4, f5],
       //   output: [label]
       // });
-      // classification.train(myTrainingSet);
+      classification.train(myTrainingSet);
     };
 
     ext.runClassifier = function(f1, f2, f3, f4, f5) {
@@ -105,12 +105,12 @@
       return classification.run([f1, f2, f3, f4, f5]);
     };
 
-    ext.trainRegressifier = function(f1, f2, f3, f4, f5, i0, i1) {
+    ext.trainRegressifier = function(f1, f2, f3, f4, f5, label) {
       // myTrainingSet.push({
       //   input: [f1, f2, f3, f4, f5],
       //   output: [label]
       // });
-      // regression.train(myTrainingSet);
+      regression.train(myTrainingSet);
     };
 
     ext.runRegressifier = function(f1, f2, f3, f4, f5) {
