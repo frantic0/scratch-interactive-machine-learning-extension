@@ -8,12 +8,17 @@
     var myTrainingSet = [];
 
     // Cleanup function when the extension is unloaded
-    ext._shutdown = function() {};
+    ext._shutdown = function() {
+      rapidLib = null;
+      regression = null;
+      classification = null;
+      myTrainingSet = [];
+    };
 
     // Status reporting code
     // Use this to report missing hardware, plugin or unsupported browser
     ext._getStatus = function() {
-        return {status: 2, msg: 'Ready'};
+        // return {status: 2, msg: 'Ready'};
     };
 
     function loadRapidLib() {
@@ -35,12 +40,11 @@
     }
 
     ext.trainClassifier = function(f1, f2, f3, f4, f5, label) {
-
       myTrainingSet.push({
         input: [f1, f2, f3, f4, f5],
         output: [label]
       });
-      classification.train(myData);
+      classification.train(myTrainingSet);
     };
 
     ext.runClassifier = function(f1, f2, f3, f4, f5) {
@@ -52,7 +56,7 @@
         input: [f1, f2, f3, f4, f5],
         output: [label]
       });
-      regression.train(myData);
+      regression.train(myTrainingSet);
     };
 
     ext.runRegressifier = function(f1, f2, f3, f4, f5) {
