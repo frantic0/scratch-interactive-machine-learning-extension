@@ -20,15 +20,16 @@
   };
 
   function loadRapidLib() {
-    $.getScript('https://www.doc.gold.ac.uk/eavi/rapidmix/RapidLib.js')
-      .done(function(script, textStatus) {
-        console.log('Loaded RapidLib');
-        // loadRapidLibModules();
-      })
-      .fail(function(jqxhr, settings, exception) {
-        console.log('Error loading RapidLib');
-        loadRapidLib();
-    });
+    console.log('Loading RapidLib');
+    // $.getScript('https://www.doc.gold.ac.uk/eavi/rapidmix/RapidLib.js')
+    //   .done(function(script, textStatus) {
+    //     console.log('Loaded RapidLib');
+    //     // loadRapidLibModules();
+    //   })
+    //   .fail(function(jqxhr, settings, exception) {
+    //     console.log('Error loading RapidLib');
+    //     loadRapidLib();
+    // });
   }
 
   // function loadRapidLibModules() {
