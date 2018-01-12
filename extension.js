@@ -18,7 +18,7 @@
     // Status reporting code
     // Use this to report missing hardware, plugin or unsupported browser
     ext._getStatus = function() {
-        // return {status: 2, msg: 'Ready'};
+        return {status: 2, msg: 'Ready'};
     };
 
     function loadRapidLib() {
@@ -39,29 +39,29 @@
       classification = new rapidLib.Classification();
     }
 
-    ext.trainClassifier = function(f1, f2, f3, f4, f5, label) {
-      myTrainingSet.push({
-        input: [f1, f2, f3, f4, f5],
-        output: [label]
-      });
-      classification.train(myTrainingSet);
-    };
-
-    ext.runClassifier = function(f1, f2, f3, f4, f5) {
-      return classification.run([f1, f2, f3, f4, f5]);
-    };
-
-    ext.trainRegressifier = function(f1, f2, f3, f4, f5, i0, i2) {
-      myTrainingSet.push({
-        input: [f1, f2, f3, f4, f5],
-        output: [label]
-      });
-      regression.train(myTrainingSet);
-    };
-
-    ext.runRegressifier = function(f1, f2, f3, f4, f5) {
-      return regression.run([f1, f2, f3, f4, f5]);
-    };
+    // ext.trainClassifier = function(f1, f2, f3, f4, f5, label) {
+    //   myTrainingSet.push({
+    //     input: [f1, f2, f3, f4, f5],
+    //     output: [label]
+    //   });
+    //   classification.train(myTrainingSet);
+    // };
+    //
+    // ext.runClassifier = function(f1, f2, f3, f4, f5) {
+    //   return classification.run([f1, f2, f3, f4, f5]);
+    // };
+    //
+    // ext.trainRegressifier = function(f1, f2, f3, f4, f5, i0, i2) {
+    //   myTrainingSet.push({
+    //     input: [f1, f2, f3, f4, f5],
+    //     output: [label]
+    //   });
+    //   regression.train(myTrainingSet);
+    // };
+    //
+    // ext.runRegressifier = function(f1, f2, f3, f4, f5) {
+    //   return regression.run([f1, f2, f3, f4, f5]);
+    // };
 
     var descriptor = {
       blocks: [
