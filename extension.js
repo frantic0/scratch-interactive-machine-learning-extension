@@ -10,11 +10,17 @@
     return {status: 2, msg: 'Ready'};
   };
 
+  // Status reporting code
+  // Use this to report missing hardware, plugin or unsupported browser
+  ext._getStatus = function() {
+      return {status: 2, msg: 'Ready'};
+  };
+
   function loadRapidLib() {
     $.getScript('https://www.doc.gold.ac.uk/eavi/rapidmix/RapidLib.js')
       .done(function(script, textStatus) {
         console.log('Loaded RapidLib');
-        loadRapidLibModules();
+        // loadRapidLibModules();
       })
       .fail(function(jqxhr, settings, exception) {
         console.log('Error loading RapidLib');
@@ -22,17 +28,13 @@
     });
   }
 
-  function loadRapidLibModules() {
-    rapidLib = window.RapidLib();
-    regression = new rapidLib.Regression();
-    classification = new rapidLib.Classification();
-  }
+  // function loadRapidLibModules() {
+  //   rapidLib = window.RapidLib();
+  //   regression = new rapidLib.Regression();
+  //   classification = new rapidLib.Classification();
+  // }
 
-  // Status reporting code
-  // Use this to report missing hardware, plugin or unsupported browser
-  ext._getStatus = function() {
-      return {status: 2, msg: 'Ready'};
-  };
+
 
   ext.my_first_block = function() {
       // Code that gets executed when the block is run
